@@ -13,7 +13,7 @@ Core::~Core() {}
 int Core::gen_chain_word(char* words[], int len, char* result[], char head, char tail, bool enable_loop)
 {
 	int i = 0;
-	if ((!isalpha(head) && head != 0)||(!isalpha(tail) && tail != 0))
+	if ((!isalpha(head) && head != '\0')||(!isalpha(tail) && tail != '\0'))
 	{
 		throw exception("首尾字母约束不合法");
 		return 0;
@@ -57,7 +57,7 @@ int Core::gen_chain_word(char* words[], int len, char* result[], char head, char
 int Core::gen_chain_char(char* words[], int len, char* result[], char head, char tail, bool enable_loop)
 {
 	int i = 0;
-	if ((!isalpha(head) &&head != 0) || (!isalpha(tail) && tail != 0))
+	if ((!isalpha(head) &&head != '\0') || (!isalpha(tail) && tail != '\0'))
 	{
 		throw exception("首尾字母约束不合法");
 		return 0;

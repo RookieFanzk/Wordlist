@@ -18,7 +18,7 @@ namespace UnitTest1
 			char* words[] = { "Algebra","apple","zoo","elephant","under","fox","dog","moon","leaf","trick","peudopseudohypoparathyroidism" };
 			char* answer[] = { "algebra","apple","elephant","trick" };
 			int answerlen = 4;
-			int resultlen = core->gen_chain_word(words, 11, result, 0, 0, false);
+			int resultlen = core->gen_chain_word(words, 11, result, '\0', '\0', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -35,7 +35,7 @@ namespace UnitTest1
 			char* words[] = { "Algebra","apple","zoo","elephant","under","fox","dog","moon","leaf","trick","peudopseudohypoparathyroidism" };
 			char* answer[] = { "peudopseudohypoparathyroidism", "moon" };
 			int answerlen = 2;
-			int resultlen = core->gen_chain_char(words, 11, result, 0, 0, false);
+			int resultlen = core->gen_chain_char(words, 11, result, '\0', '\0', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -52,7 +52,7 @@ namespace UnitTest1
 			char* words[] = { "Algebra","apple","zoo","elephant","under","fox","dog","moon","leaf","trick","peudopseudohypoparathyroidism" };
 			char* answer[] = { "elephant","trick" };
 			int answerlen = 2;
-			int resultlen = core->gen_chain_word(words, 11, result, 'e', 0, false);
+			int resultlen = core->gen_chain_word(words, 11, result, 'e', '\0', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -69,7 +69,7 @@ namespace UnitTest1
 			char* words[] = { "Algebra","apple","zoo","elephant","under","fox","dog","moon","leaf","trick","peudopseudohypoparathyroidism" };
 			char* answer[] = { "algebra","apple","elephant"};
 			int answerlen = 3;
-			int resultlen = core->gen_chain_word(words, 11, result, 0, 't', false);
+			int resultlen = core->gen_chain_word(words, 11, result, '\0', 't', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -103,7 +103,7 @@ namespace UnitTest1
 			char* words[] = { "abb","bccccccccccccccccccccc","eccccccccccccccccccccc","ef","fffffd","dxxx","ccx" };
 			char* answer[] = { "eccccccccccccccccccccc","ccx" };
 			int answerlen = 2;
-			int resultlen = core->gen_chain_char(words, 7, result, 'e', 0, false);
+			int resultlen = core->gen_chain_char(words, 7, result, 'e', '\0', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -120,7 +120,7 @@ namespace UnitTest1
 			char* words[] = { "abb","bccccccccccccccccccccc","eccccccccccccccccccccc","btttt","bt" };
 			char* answer[] = { "abb","btttt" };
 			int answerlen = 2;
-			int resultlen = core->gen_chain_char(words, 5, result, 0, 't', false);
+			int resultlen = core->gen_chain_char(words, 5, result, '\0', 't', false);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -154,7 +154,7 @@ namespace UnitTest1
 			char* words[] = { "apple","elephant","tea","alex","box","xob","cccccff","football" };
 			char* answer[] = { "apple","elephant","tea","alex","xob","box" };
 			int answerlen = 6;
-			int resultlen = core->gen_chain_word(words, 8, result, 0, 0, true);
+			int resultlen = core->gen_chain_word(words, 8, result, '\0', '\0', true);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -171,7 +171,7 @@ namespace UnitTest1
 			char* words[] = { "apple","elephant","tea","alex","box","xob","cccccff","football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc" };
 			char* answer[] = { "cccccff","football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc" };
 			int answerlen = 3;
-			int resultlen = core->gen_chain_char(words, 9, result, 0, 0, true);
+			int resultlen = core->gen_chain_char(words, 9, result, '\0', '\0', true);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -188,7 +188,7 @@ namespace UnitTest1
 			char* words[] = { "apple","elephant","tea","alex","box","xob","cccccff","football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc"};
 			char* answer[] = { "apple","elephant","tea","alex","xob" };
 			int answerlen = 5;
-			int resultlen = core->gen_chain_word(words, 9, result, 0, 'b', true);
+			int resultlen = core->gen_chain_word(words, 9, result, '\0', 'b', true);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -205,7 +205,7 @@ namespace UnitTest1
 			char* words[] = { "apple","elephant","tea","alex","box","xob","cccccff","football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc" };
 			char* answer[] = { "football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc","cccccff" };
 			int answerlen = 3;
-			int resultlen = core->gen_chain_char(words, 9, result, 0, 'f', true);
+			int resultlen = core->gen_chain_char(words, 9, result, '\0', 'f', true);
 			Assert::AreEqual(resultlen, answerlen);
 			int i = 0;
 			for (i = 0; i < answerlen; i++)
@@ -224,7 +224,7 @@ namespace UnitTest1
 			char* answer[] = { "football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc","cccccff" };
 			int answerlen = 3;
 			try {
-				int resultlen = core->gen_chain_char(words, 9, result, 0, 'f', false);
+				int resultlen = core->gen_chain_char(words, 9, result, '\0', 'f', false);
 			}
 			catch (exception e) {
 				Assert::AreEqual("单词文本隐含单词环", e.what());
@@ -238,7 +238,7 @@ namespace UnitTest1
 			char* answer[] = { "football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc","cccccff" };
 			int answerlen = 3;
 			try {
-				int resultlen = core->gen_chain_char(words, 9, result, 0, 'f', false);
+				int resultlen = core->gen_chain_char(words, 9, result, '\0', 'f', false);
 			}
 			catch (exception e) {
 				Assert::AreEqual("单词包含非法字符", e.what());
@@ -252,7 +252,7 @@ namespace UnitTest1
 			char* answer[] = { "football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc","cccccff" };
 			int answerlen = 3;
 			try {
-				int resultlen = core->gen_chain_char(words, 9, result, '*', 0, false);
+				int resultlen = core->gen_chain_char(words, 9, result, '*', '\0', false);
 			}
 			catch (exception e) {
 				Assert::AreEqual("首尾字母约束不合法", e.what());
@@ -280,7 +280,7 @@ namespace UnitTest1
 			char* answer[] = { "football","lllllllllllllllllllllllllllllllllllllllllllllllllllllllllc","cccccff" };
 			int answerlen = 3;
 			try {
-				int resultlen = core->gen_chain_char(words, 9, result, 0, 0, false);
+				int resultlen = core->gen_chain_char(words, 9, result, '\0', '\0', false);
 			}
 			catch (exception e) {
 				Assert::AreEqual("有单词为空字符串", e.what());
